@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS  # ← NOUVELLE LIGNE
 import pandas as pd
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
@@ -6,6 +7,7 @@ import pickle
 import os
 
 app = Flask(__name__)
+CORS(app)
 
 # Variables globales pour le modèle
 df_movies = None
